@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <title>Quiz - Patrimônio Mundial</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body class="page-transition">
+  <div class="flags-container"></div>
+
   <header>
     <div class="container header-content">
       <div class="logo">
@@ -35,16 +39,17 @@
         </div>
         <div id="result" class="result"></div>
       </div>
+
+      <h3>Países com mais patrimônios em risco</h3>
+      <canvas id="barChart" width="400" height="200"></canvas>
     </section>
   </main>
 
   <footer>
     <div class="container footer-content">
       <p>Site desenvolvido pelos alunos Gabriel Z e Arthur L do 1°EM técnico - EXPO PT 2025</p>
-            <p>Turma de Meio Ambiente - Professor Orientador: [Felipe Ishara]</p>
+      <p>Turma de Meio Ambiente - Professor Orientador: [Felipe Ishara]</p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-// Quiz Questions
 const questions = [
   {
     question: "Qual é a principal causa do derretimento acelerado em locais de Patrimônio Mundial?",
@@ -32,7 +31,6 @@ const questions = [
   }
 ];
 
-// Variáveis do quiz
 let currentQuestion = 0;
 let userAnswers = new Array(questions.length).fill(null);
 const quizContent = document.getElementById('quiz-content');
@@ -42,7 +40,6 @@ const submitBtn = document.getElementById('submit-btn');
 const restartBtn = document.getElementById('restart-btn');
 const resultDiv = document.getElementById('result');
 
-// Inicializar Quiz
 function initQuiz() {
   currentQuestion = 0;
   userAnswers = new Array(questions.length).fill(null);
@@ -52,7 +49,6 @@ function initQuiz() {
   updateButtons();
 }
 
-// Mostrar Pergunta
 function showQuestion(index) {
   const question = questions[index];
   let optionsHtml = '';
@@ -81,8 +77,7 @@ function showQuestion(index) {
     <div class="options">${optionsHtml}</div>
   `;
 
-  const optionInputs = document.querySelectorAll('input[name="answer"]');
-  optionInputs.forEach(input => {
+  document.querySelectorAll('input[name="answer"]').forEach(input => {
     input.addEventListener('change', (e) => {
       userAnswers[index] = parseInt(e.target.value);
       showQuestion(index);
@@ -91,7 +86,6 @@ function showQuestion(index) {
   });
 }
 
-// Atualizar Botões
 function updateButtons() {
   prevBtn.style.display = currentQuestion > 0 ? 'inline-block' : 'none';
   nextBtn.style.display = currentQuestion < questions.length - 1 ? 'inline-block' : 'none';
@@ -100,12 +94,10 @@ function updateButtons() {
   submitBtn.disabled = userAnswers.includes(null);
 }
 
-// Calcular Pontuação
 function calculateScore() {
   return userAnswers.reduce((acc, ans, idx) => ans === questions[idx].correct ? acc + 1 : acc, 0);
 }
 
-// Mostrar Resultados
 function showResults() {
   const score = calculateScore();
   const percentage = (score / questions.length) * 100;
@@ -123,7 +115,6 @@ function showResults() {
   restartBtn.style.display = 'inline-block';
 }
 
-// Botões de navegação
 prevBtn.addEventListener('click', () => {
   if (currentQuestion > 0) {
     currentQuestion--;
@@ -142,5 +133,62 @@ nextBtn.addEventListener('click', () => {
 
 submitBtn.addEventListener('click', showResults);
 restartBtn.addEventListener('click', initQuiz);
-
 document.addEventListener('DOMContentLoaded', initQuiz);
+
+const ctx = document.getElementById('barChart');
+if(ctx) {
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Argentina', 'Tanzânia', 'Suíça', 'Canadá', 'Moçambique', 'Groelândia'],
+      datasets: [{
+        label: 'Patrimônios em Risco',
+        data: [6,5,4,3,2,1],
+        backgroundColor: '#1a5276'
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+}
+
+function createSnowflake() {
+  const snowContainer = document.querySelector('.snow-container');
+  if(!snowContainer) return;
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.textContent = '❄';
+  snowflake.style.left = Math.random() * window.innerWidth + 'px';
+  snowflake.style.fontSize = (Math.random() * 15 + 10) + 'px';
+  snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+  snowContainer.appendChild(snowflake);
+  setTimeout(() => snowflake.remove(), 7000);
+}
+
+setInterval(createSnowflake, 200);
+
+const flagImages = [
+  'https://flagcdn.com/w20/ar.png',
+  'https://flagcdn.com/w20/ca.png',
+  'https://flagcdn.com/w20/ch.png',
+  'https://flagcdn.com/w20/mz.png',
+  'https://flagcdn.com/w20/tz.png'
+];
+
+function createFlag() {
+  const container = document.querySelector('.flags-container');
+  if(!container) return;
+  const flag = document.createElement('div');
+  flag.classList.add('flag');
+  flag.style.left = Math.random() * window.innerWidth + 'px';
+  flag.style.backgroundImage = `url(${flagImages[Math.floor(Math.random()*flagImages.length)]})`;
+  flag.style.animationDuration = (Math.random() * 5 + 5) + 's';
+  container.appendChild(flag);
+  setTimeout(() => flag.remove(), 7000);
+}
+
+setInterval(createFlag, 300);
