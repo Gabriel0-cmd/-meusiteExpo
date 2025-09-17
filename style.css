@@ -197,3 +197,44 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Estilo geral do body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f8ff;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Container para as bandeiras */
+.flags-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Pra não atrapalhar cliques */
+  overflow: hidden;
+  z-index: 9999;
+}
+
+/* Estilo das bandeiras */
+.flag {
+  position: absolute;
+  top: -50px; /* Começam acima da tela */
+  width: 40px;
+  height: auto;
+  user-select: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/* Animação para cair */
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
