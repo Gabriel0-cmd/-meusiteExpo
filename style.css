@@ -197,7 +197,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* Estilos gerais */
+
 * {
   margin: 0;
   padding: 0;
@@ -218,7 +218,6 @@ body {
   padding: 20px;
 }
 
-/* Estilos para o cabeçalho */
 header {
   background-color: #2c3e50;
   color: white;
@@ -253,7 +252,6 @@ nav a:hover {
   opacity: 0.8;
 }
 
-/* Estilos para o banner */
 .banner {
   background-color: #3498db;
   color: white;
@@ -265,7 +263,6 @@ nav a:hover {
   font-size: 1.5rem;
 }
 
-/* Estilos para o conteúdo principal */
 main {
   padding: 40px 0;
 }
@@ -282,7 +279,6 @@ main p {
   max-width: 800px;
 }
 
-/* Estilos para o grid de introdução */
 .intro-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -314,7 +310,6 @@ main p {
   margin-bottom: 0;
 }
 
-/* Estilos para as imagens arredondadas */
 .intro-card img {
   border-radius: 15px;
   width: 100%;
@@ -324,13 +319,11 @@ main p {
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
-/* Estilos para transição de página (se necessário) */
 .page-transition {
   opacity: 1;
   transition: opacity 0.3s;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -352,7 +345,7 @@ main p {
   <meta charset="UTF-8">
   <title>Projetos - Patrimônio Mundial em Risco</title>
   <style>
-    /* Estilos gerais */
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -368,7 +361,6 @@ main p {
       padding: 0 20px;
     }
     
-    /* Cabeçalho */
     header {
       background: linear-gradient(135deg, #2c3e50, #4a6491);
       color: white;
@@ -404,7 +396,6 @@ main p {
       opacity: 0.8;
     }
     
-    /* Conteúdo principal */
     main {
       padding: 40px 0;
     }
@@ -415,7 +406,6 @@ main p {
       margin-bottom: 20px;
     }
     
-    /* Grid de projetos */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -441,7 +431,7 @@ main p {
       height: 200px;
       object-fit: cover;
       display: block;
-      border-radius: 10px; /* Arredondamento das imagens */
+      border-radius: 10px; 
     }
     
     .project-card h3 {
@@ -455,7 +445,6 @@ main p {
       color: #555;
     }
     
-    /* Rodapé */
     footer {
       background: #2c3e50;
       color: white;
@@ -469,7 +458,6 @@ main p {
       opacity: 0.9;
     }
     
-    /* Transições de página */
     .page-transition {
       animation: fadeIn 0.5s ease-in-out;
     }
@@ -482,7 +470,6 @@ main p {
   <script defer src="script.js"></script>
 </head>
 
-/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -502,7 +489,6 @@ body {
     padding: 0 20px;
 }
 
-/* Cabeçalho */
 header {
     background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
     color: white;
@@ -539,7 +525,6 @@ nav a:hover {
     opacity: 0.8;
 }
 
-/* Conteúdo principal */
 main {
     padding: 40px 0;
 }
@@ -582,7 +567,6 @@ p {
     font-size: 16px;
 }
 
-/* Seção da turma */
 .team-info {
     display: flex;
     flex-wrap: wrap;
@@ -601,7 +585,6 @@ p {
     text-align: center;
 }
 
-/* Arredondamento das imagens */
 .team-photo img {
     width: 100%;
     max-width: 400px;
@@ -622,7 +605,6 @@ p {
     color: #7f8c8d;
 }
 
-/* Membros da equipe */
 .team-members {
     display: flex;
     flex-wrap: wrap;
@@ -672,7 +654,6 @@ p {
     color: #7f8c8d;
 }
 
-/* Rodapé */
 footer {
     background: #2c3e50;
     color: white;
@@ -686,7 +667,6 @@ footer {
     opacity: 0.9;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
